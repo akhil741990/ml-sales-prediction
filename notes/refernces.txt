@@ -1,0 +1,32 @@
+pandas  0.23 bug : 
+
+data['Item_Fat_Content'] = data['Item_Fat_Content'].replace({'LF':'Low Fat',
+                                                             'reg':'Regular',
+                                                             'low fat':'Low Fat'})
+error:
+
+  File "<stdin>", line 3, in <module>
+  File "/home/akhil/.local/lib/python3.5/site-packages/pandas/core/series.py", line 3429, in replace
+    regex=regex, method=method)
+  File "/home/akhil/.local/lib/python3.5/site-packages/pandas/core/generic.py", line 5798, in replace
+    limit=limit, regex=regex)
+  File "/home/akhil/.local/lib/python3.5/site-packages/pandas/core/series.py", line 3429, in replace
+    regex=regex, method=method)
+  File "/home/akhil/.local/lib/python3.5/site-packages/pandas/core/generic.py", line 5847, in replace
+    regex=regex)
+  File "/home/akhil/.local/lib/python3.5/site-packages/pandas/core/internals.py", line 3754, in replace_list
+    mgr=mgr, convert=convert)
+  File "/home/akhil/.local/lib/python3.5/site-packages/pandas/core/internals.py", line 2432, in replace
+    if not either_list and is_re(to_replace):
+  File "/home/akhil/.local/lib/python3.5/site-packages/pandas/core/dtypes/inference.py", line 219, in is_re
+    return isinstance(obj, re_type)
+  File "/usr/lib/python3.5/typing.py", line 260, in __instancecheck__
+    raise TypeError("Type aliases cannot be used with isinstance().")
+TypeError: Type aliases cannot be used with isinstance().
+
+
+
+=====================================================
+https://datatofish.com/if-condition-in-pandas-dataframe/
+
+https://www.analyticsvidhya.com/blog/2016/02/bigmart-sales-solution-top-20/
